@@ -9,30 +9,45 @@ I think the main problem is that you call web.loadUrl(webURL); also when savedIn
 Try:
 
 if (savedInstanceState == null)
+
 {
+
   web.loadUrl(webURL);
+  
 }
+
+
 
 ##### EDIT 2: 
 You also need the onSaveInstanceState and onRestoreInstanceState override.
 
 @Override
 protected void onSaveInstanceState(Bundle outState )
+
 {
+
 super.onSaveInstanceState(outState);
+
 web.saveState(outState);
+
 }
 
 @Override
+
 protected void onRestoreInstanceState(Bundle savedInstanceState)
+
 {
+
 super.onRestoreInstanceState(savedInstanceState);
+
 web.restoreState(savedInstanceState);
+
 }
+
 
 
 #### Note: 
 Please also add in your AndroidManifest.xml in your Activity 
-#####android:configChanges="orientation|screenSize" 
+##### android:configChanges="orientation|screenSize" 
 
 Thanks
