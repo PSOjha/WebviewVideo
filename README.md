@@ -16,7 +16,7 @@ if (savedInstanceState == null)
 
 {
 
-  web.loadUrl(webURL);
+  webView.loadUrl(webURL);
   
 }
 
@@ -32,7 +32,7 @@ protected void onSaveInstanceState(Bundle outState )
 
 super.onSaveInstanceState(outState);
 
-web.saveState(outState);
+webView.saveState(outState);
 
 }
 
@@ -44,7 +44,7 @@ protected void onRestoreInstanceState(Bundle savedInstanceState)
 
 super.onRestoreInstanceState(savedInstanceState);
 
-web.restoreState(savedInstanceState);
+webView.restoreState(savedInstanceState);
 
 }
 
